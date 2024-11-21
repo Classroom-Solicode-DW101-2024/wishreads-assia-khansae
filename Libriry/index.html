@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bokor&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Pacifico&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');        body {
+            background-color: #E9E9E9;
+        }
+
+        .head {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            width: 1250px;
+            height: 50px;
+        }
+
+        .Bibliothèque {
+            border: solid 2px;
+            border-color: #FF33A4;
+            border-radius: 5px;
+            width: 150px;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        .logo {
+            width: 100px;
+            height: 50px;
+        }
+
+        .headeriMG {
+            display: flex;
+            justify-content: space-between;
+            width: 1250px;
+            height: 300px;
+            margin-top: -20px;
+        }
+
+        .content {
+            width: 1250px;
+            height: auto;
+            background-color: #FEF2F4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            width: 1250px;
+            height: 20px;
+            background-color: #EFB8D0;
+        }
+
+        .Bienvenue {
+            font-size: 25px;
+            color: #6D364E;
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+        }
+
+        a {
+            color: black;
+        }
+
+        #books-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .book {
+    margin: 50px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #D3D2D2;
+    width: 280px;
+    height: 450px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Ensures proper spacing between content */
+}
+
+.book img {
+    width: 200px;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.book h2 {
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.book p {
+    text-align: center;
+    color: rgb(56, 52, 52);
+}
+
+.book button {
+    width: 80px;
+    height: 40px;
+    background-color: #D3D2D2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; 
+}
+
+.book .book-buttons {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 10px;
+}
+
+.book button img {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: -1px;
+    width: 20px;
+    height: 20px;
+}
+
+        .search-btn {
+            width: 200px;
+            height: 25px;
+            background-color: #D3D2D2;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            font-size: 10px;
+            margin-bottom: 20px;
+            margin-left: 910px;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            margin-bottom: -5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="head">
+            <form>
+                <select class="Bibliothèque">
+                    <option disabled selected>bibliotheque</option>
+                    <option value="pride and prejudice">pride and prejudice</option>
+                    <option value="The Wife Between Us">The Wife Between Us</option>
+                    <option value="The Girl on the Train">The Girl on the Train</option>
+                    <option value="Where the carawdads">Where the carawdads</option>
+                    <option value="Big Little Lies">Big Little Lies</option>
+                    <option value="Alice's Adventures">Alice's Adventures</option>
+                    <option value="Vanity Fair">Vanity Fair</option>
+                    <option value="The Bell Jar">The Bell Jar</option>
+                    <option value="The Autobiography">The Autobiography</option>
+                </select>
+            </form>
+            <a href="index.html"><p>Accueil</p></a>
+            <a href="wishList.html"><p>wishList</p></a>
+            <a href="details.html"><p>Details</p></a>
+
+            <img src="img/logo.webp" alt="logo" class="logo">
+        </div>
+    </header>
+
+    <br><br>
+
+    <img src="img/background.png" alt="headerImage" class="headeriMG">
+
+    <div class="content">
+        <p class="Bienvenue">Bienvenue dans votre bibliothèque</p>
+    </div>
+
+    <div class="footer"></div>
+
+    <br><br>
+
+    <form class="formulaire">
+        <input type="text" placeholder="Recherche" class="search-btn">
+        <button><img src="img/search.webp" alt="search-icon" class="search-icon"></button>
+    </form>
+
+    <div id="books-container"></div>
+
+   <script>
+  fetch('./data.json')
+  .then(response => {
+    if (!response.ok) {
+      console.log('Erreur de récupération de fichier');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log(data); 
+    const allBooks = data.books;
+
+    function displayBooks(books) {
+      const container = document.getElementById('books-container');
+      container.innerHTML = '';
+      
+      if (books.length === 0) {
+        container.innerHTML = '<p>No books found</p>';
+      }
+      books.forEach((book) => { 
+        const bookElement = document.createElement('div');
+        bookElement.classList.add('book');
+        let imageURL = book.cover || 'https://via.placeholder.com/150'; 
+        bookElement.innerHTML = `
+          <img src="${imageURL}" alt="${book.title} cover">
+          <h2>${book.title}</h2>
+          <p>${book.author.fullname}</p>
+        `;
+        
+        const detailsButton = document.createElement('button');
+        detailsButton.classList.add('details-icon');
+        detailsButton.innerHTML = '<img src="img/details.png" alt="Details Icon">';
+        detailsButton.addEventListener('click', () => {
+
+            localStorage.setItem('currentBook', JSON.stringify(book));
+
+            window.location.href = 'details.html';
+        });
+
+        const wishlistButton = document.createElement('button');
+        wishlistButton.classList.add('book-button');
+        wishlistButton.innerHTML = '<img src="img/bookmark.png" alt="Wishlist Icon">';
+        wishlistButton.addEventListener('click', () => {
+          localStorage.setItem('wishList', book.title);
+          window.location.href = 'wishList.html';
+        });
+
+        bookElement.appendChild(detailsButton);
+        bookElement.appendChild(wishlistButton);
+        container.appendChild(bookElement);
+      });
+    }
+
+    displayBooks(allBooks);
+
+    document.querySelector('.formulaire').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const searchQuery = document.querySelector('.search-btn').value.toLowerCase();
+      const filteredBooks = allBooks.filter(book =>
+        book.title.toLowerCase().includes(searchQuery) ||
+        book.author.fullname.toLowerCase().includes(searchQuery)
+      );
+      displayBooks(filteredBooks);
+    });
+  })
+  .catch(error => console.error('Erreur de récupération des données:', error));
+</script>
+</body>
+</html>

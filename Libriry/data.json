@@ -1,0 +1,126 @@
+{
+    "books"  : [
+
+    {
+        "title" : "Pride and Prejudice",
+        "description" : "Set in rural England in the early 19th century, Pride and Prejudice tells the story of Elizabeth Bennet and her complex relationship with the wealthy, aloof Mr. Darcy. Through misunderstandings, social expectations, and personal growth, the novel explores themes of love, class, and reputation, with sharp wit and keen social commentary.",
+        "cover" : "img/pride and prejudice.jpg",
+        "linkPDF" : "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm",
+        "author": {
+            "fullname": "Jane Austen",
+            "biography": "Jane Austen (1775–1817) was an English novelist renowned for her works exploring themes of love, marriage, and society. Her most famous works, including Pride and Prejudice, Sense and Sensibility, and Emma, remain widely read and influential for their sharp wit, strong heroines, and keen social observations."
+        },
+        "releasedate" : "January 28, 1813"
+    },
+
+
+
+    {
+        "title" :  "The Wife Between Us",
+        "description" : "A twisted tale of love and obsession that challenges the assumptions we make about marriage and infidelity.",
+        "cover" : "img/the wife between us.jpg",
+        "linkPDF" : "https://bdebooks.com/en/books/the-wife-between-us-by-greer-hendricks",
+        "author": {
+            "fullname": "Greer  & Sarah ",
+            "biography": ""
+        },
+       "releasedate" : "January 9, 2018 "
+    },
+
+
+
+    {
+        "title" :  "The Girl on the Train",
+        "description" : "A gripping tale of a woman who becomes embroiled in a missing person investigation that uncovers dark secrets and lies.  ",
+        "cover" : "img/the girl on the train.jpg",
+        "linkPDF" : "https://drive.google.com/file/d/0B6xeB9nZ-6_Ic2FOUUwybFV5elE/view",
+        "author": {
+            "fullname": "",
+            "biography": ""
+        },
+       "releasedate" : "January 13, 2015"
+    },
+
+
+
+    {
+        "title" : "the Crawdads Sing",
+        "description" : "Set in the marshes of North Carolina, this debut novel tells the story of Kya Clark, the Marsh Girl, who grows up isolated and shunned by the local community. As she matures, Kya becomes a self-taught naturalist, and her story intertwines with a murder mystery that could change her life forever. Where the Crawdads Sing is a haunting and lyrical coming-of-age novel about love, loneliness, and survival in the wild.",
+        "cover" : "img/where_the_crawdads_sing.jpg",
+        "linkPDF" : "https://archive.org/download/wherethecrawdadssing/Where-the-Crawdads-Sing.pdf",
+        "author": {
+            "fullname": "Delia Owens",
+            "biography": "Delia Owens is an American author and zoologist. She is best known for her debut novel 'Where the Crawdads Sing', which became a global bestseller. Owens' background in science and wildlife conservation informs her poetic and evocative writing, particularly her descriptions of nature and the environment."
+        },
+        "releasedate" : "August 14, 2018"
+    },
+
+
+
+    {
+        "title" :  "Big Little Lies",
+        "description" : "This novel follows three women whose lives intersect in unexpected ways, culminating in a shocking event at a school trivia night.",
+        "cover" : "img/Big Little Lies.png",
+        "linkPDF" : "https://archive.org/details/biglittlelies0000mori_v6v3",
+        "author": {
+            "fullname": "Liane Moriarty",
+            "biography": ""
+        },
+       "releasedate" : "July 29, 2014"
+    },
+
+
+
+    {
+        "title" : "Alice's Adventures",
+        "description" : "Alice's Adventures in Wonderland is a whimsical tale that follows a young girl named Alice as she falls down a rabbit hole into a bizarre and fantastical world. Along the way, she meets strange characters such as the White Rabbit, the Cheshire Cat, and the Mad Hatter. Filled with nonsensical humor and wordplay, the story explores themes of curiosity, identity, and the absurdity of life.",
+        "cover" : "img/Alice's Adventures .png",
+        "linkPDF" : "https://www.gutenberg.org/ebooks/11",
+        "author": {
+            "fullname": "Lewis Carroll",
+            "biography": "Lewis Carroll, the pen name of Charles Lutwidge Dodgson (1832–1898), was an English writer, mathematician, and logician. He is best known for his classic works Alice's Adventures in Wonderland and Through the Looking-Glass. His playful use of language, logic, and fantasy has made his work a lasting influence in both children's literature and literary nonsense."
+        },
+        "releasedate" : "November 26, 1865"
+    },
+
+
+
+    {
+        "title" : "Vanity Fair",
+        "description" : "Set in early 19th-century England, Vanity Fair is a satirical novel that follows the lives of two women, the ambitious and manipulative Becky Sharp and the more innocent Amelia Sedley, as they navigate love, betrayal, and social climbing. The novel critiques the vanity and moral shortcomings of British society, highlighting the superficiality and hypocrisy of the aristocracy.",
+        "cover" : "img/Vanity Fair.jpg",
+        "linkPDF" : "https://www.gutenberg.org/ebooks/634",
+        "author": {
+            "fullname": "William Makepeace Thackeray",
+            "biography": "William Makepeace Thackeray (1811–1863) was an English novelist and satirist. Best known for his novel Vanity Fair, Thackeray's works often criticized the social and moral failings of his time. His sharp wit and deep social commentary made him a significant figure in 19th-century literature."
+        },
+        "releasedate" : "1847–1848"
+    },
+
+
+    {
+        "title" : "The Bell Jar",
+        "description" : "The Bell Jar is a semi-autobiographical novel that follows Esther Greenwood, a young woman who struggles with mental illness and the pressures of societal expectations. Set in 1950s America, the novel explores themes of identity, depression, and the stifling roles of women. As Esther's mental state deteriorates, the novel vividly portrays her descent into madness and her struggle to reclaim her sense of self.",
+        "cover" : "img/The Bell Jar.png",
+        "linkPDF" : "https://www.gutenberg.org/ebooks/43000",
+        "author": {
+            "fullname": "Sylvia Plath",
+            "biography": "Sylvia Plath (1932–1963) was an American poet and novelist, known for her confessional writing style and exploration of mental illness, depression, and identity. Her only novel, The Bell Jar, draws from her own struggles with mental health. Plath is also famed for her poetry, particularly her collection Ariel, and is regarded as a major figure in 20th-century literature."
+        }
+    },
+
+
+    {
+        "title" : "The Autobiography ",
+        "description" : "The Autobiography of Malcolm X tells the powerful and transformative life story of Malcolm X, from his troubled childhood in Nebraska to his rise as a leader of the Nation of Islam, and later as a global human rights advocate. The book chronicles his spiritual journey, his evolving views on race, and his commitment to black empowerment. Through his own words, as told to journalist Alex Haley, this autobiography explores themes of identity, social justice, and the fight for equality.",
+        "cover" : "img/The Autobiography.png",
+        "linkPDF" : "https://archive.org/details/TheAutobiographyOfMalcolmX",
+        "author": {
+            "fullname": "Malcolm X & Alex Haley",
+            "biography": "Malcolm X (1925–1965) was an African American Muslim minister, human rights activist, and a pivotal figure in the Civil Rights Movement. His autobiography, co-written with journalist Alex Haley, remains a seminal work in understanding the history of race and resistance in America. Alex Haley (1921–1992) was a journalist and author, known for his works on African American history, including his collaboration with Malcolm X on this autobiography and his best-selling novel Roots."
+        },
+        "releasedate" : "1965"
+    }
+    
+]
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7dfdf;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%; 
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start; 
+            gap: 20px;
+            align-items: center;
+        }
+
+        .book-card {
+            width: 95%; 
+            max-width: 1300px;
+            height: 350px; 
+            background: rgb(175, 170, 170);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row-reverse; 
+            align-items: center;
+            padding: 1cm;
+            box-sizing: border-box;
+        }
+
+        .book-card img {
+            width: 25%; 
+            height: auto;
+            object-fit: cover; 
+            margin-left: 10px;
+            margin-top: 20px; 
+            margin-bottom: 20px; 
+            border-radius: 8px;
+        }
+
+        .book-card .content {
+            width: 70%;
+            padding-right: 20px;
+        }
+
+        .book-card h2 {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .button-container button {
+            padding: 8px 16px;
+            background-color: #f9f9f9;
+            color: rgb(0, 0, 0);
+            border: 2px solid rgb(255, 169, 183);
+            cursor: pointer;
+            border-radius: 20px;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: rgb(255, 169, 183);
+        }
+
+        .remove-btn {
+            background-color: rgb(255, 169, 183);
+        }
+
+        .remove-btn:hover {
+            background-color: rgb(255, 123, 153);
+        }
+
+        @media (max-width: 768px) {
+            .book-card {
+                width: 95%; 
+            }
+
+            .book-card img {
+                width: 30%; 
+                margin-left: 5px;
+            }
+
+            .book-card .content {
+                width: 65%; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-card {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .book-card img {
+                width: 80%;
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .book-card .content {
+                width: 100%;
+            }
+        }
+
+        .search-btn {
+            width: 200px;
+            height: 25px;
+            background-color: #D3D2D2;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            font-size: 10px;
+            margin-bottom: 20px;
+            margin-left: 910px;
+        }
+
+        .search-icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            margin-bottom: -5px;
+        }
+
+        .done-btn {
+            display: none; 
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(100, 200, 100);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .done-btn.visible {
+            display: inline-block;
+        }
+
+        .btn_one {
+            border: none;
+        }
+        .formulaire button {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form class="formulaire">
+        <input type="text" placeholder="Recherche" class="search-btn" id="search-input">
+        <button type="submit"><img src="img/search.webp" alt="search-icon" class="search-icon"></button>
+    </form>
+
+    <button class="done-btn" id="done-btn">À la prochaine !</button> 
+
+<div class="container">
+
+</div>
+
+<script>
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        const container = document.querySelector('.container');
+        const searchInput = document.getElementById('search-input');
+        const doneBtn = document.getElementById('done-btn');
+        
+        let books = data.books;
+
+        // Function to render the books
+        function renderBooks(filteredBooks) {
+            container.innerHTML = '';
+            filteredBooks.forEach(book => {
+                const bookCard = `
+                    <div class="book-card">
+                        <img src="${book.cover}" alt="${book.title}">
+                        <div class="content">
+                            <h2>${book.title}</h2>
+                            <div class="button-container">
+                                <a href="${book.linkPDF}" target="_blank">
+                                    <button>PDF</button>
+                                </a>
+                                <button class="remove-btn" onclick="removeBook(this)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += bookCard;
+            });
+        }
+
+        renderBooks(books);
+
+        searchInput.addEventListener('keyup', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredBooks = books.filter(book => 
+                book.title.toLowerCase().includes(searchTerm)
+            );
+            renderBooks(filteredBooks); 
+
+            if (filteredBooks.length > 0) {
+                doneBtn.classList.add('visible');
+            } else {
+                doneBtn.classList.remove('visible');
+            }
+        });
+
+        doneBtn.addEventListener('click', function() {
+            alert('Merci de visiter notre bibliothèque !');
+        });
+    })
+    .catch(error => {
+        console.error('Error loading the JSON file:', error);
+    });
+
+function removeBook(button) {
+    const bookCard = button.closest('.book-card');
+    bookCard.remove();
+}
+</script>
+
+</body>
+</html>
